@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent { node { label 'swarm-ci' } }
+    agent any
 
     environment {
         TEST_PREFIX = "test-IMAGE"
@@ -25,6 +25,12 @@ pipeline {
             }
         }
 
+        stage("seguimos") {
+            steps {
+                echo "va todo bien"
+                sh 'ls -la '
+            }
+        }
         // stage("Build and start test image") {
         //     steps {
         //         sh "docker-composer build"

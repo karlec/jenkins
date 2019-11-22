@@ -4,7 +4,7 @@ pipeline {
         stage("Checkout GIT"){
             steps{
                 echo "====++++executing Checkout GIT+++===="
-                git poll: true, 'git@github.com:karlec/jenkins.git' 
+                git poll: true, 'https://github.com/karlec/jenkins.git' 
             }
             post{
                 always{
